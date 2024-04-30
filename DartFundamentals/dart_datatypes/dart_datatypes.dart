@@ -84,6 +84,8 @@ void main(List<String> args) {
   const myName = "Phan Duc";
 
   print(myName); // sẽ in ra: Phan Duc
+
+  dynameType();
 }
 
 void StringMethod(String s) {
@@ -192,4 +194,37 @@ void mapMethod(Map map1) {
   /// addAll(Map) để thêm tất cả các phần tử từ một Map khác vào Map hiện tại
   Map map12 = map1..addAll(map2);
   print("map12 -> $map12"); // sẽ in ra: map12 -> {key: value}
+}
+
+void printMyName() {
+    print('Phan Anh Duc');
+}
+
+String sayHello(String name) {
+    return 'Hello $name';
+}
+
+String fullName(String title, [String? first, String? last]) {
+  // title ở đây có kiểu là optinal
+  if (first != null && last != null) {
+    return '$title $first $last';
+  } else {
+    return '$title';
+  }
+}
+
+String sayFullName(String first, String last, [String title = "Hello"]) {
+  return '$title $first $last';
+}
+
+void dynameType() {
+  dynamic myVariable = 42; // Kiểu int
+  myVariable = "hello"; // lúc này là kiểu string
+
+  var myName;
+  myName = "Nick"; // lúc này là kiểu string
+  myName = 42; // lúc này là kiểu int
+
+  print(myVariable.runtimeType); // sẽ in ra: String
+  print(myName.runtimeType); // sẽ in ra: int
 }
