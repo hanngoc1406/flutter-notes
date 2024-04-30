@@ -93,8 +93,40 @@ compliment(number) {
   return '$number is a very nice $type';
 }
 ```
-- Ngoài ra các bạn còn có bỏ luôn tên hàm và khai báo như hàm một kiểu dữ liệu (Anonymous functions). 
-- Các bạn cũng có thể viết một function trả về một function khác
+- Ngoài ra các bạn còn có thể bỏ luôn tên hàm và khai báo như hàm một kiểu dữ liệu (Anonymous functions). 
+- Các bạn cũng có thể viết một function trả về một function khác với cấu trúc: `Function functionName(params) { return (params) }`
+- Nếu fuction chỉ có 1 dòng thì `return` trong Dart cũng có thể việt ngắn gọn lại bằng `=>`
+
+```Dart
+void main () {
+    // Hàm ẩn danh
+    final multiply = (int a, int b) {
+        return a * b;
+    };
+
+    print(multiply(2, 3)); // sẽ in ra: 6
+
+    // Viết ngắn gọn hơn
+    final multiply2 = (int a, int b) => a * b;
+    print(multiply2(2, 5)); // sẽ in ra: 10
+
+    // Hàm trả về một hàm khác
+    Function applyMultiplier(num multiplier) {
+        // trả về hàm ẩn danh
+        return (num value) {
+            return value * multiplier;
+        };
+    }
+
+    // triple vẫn là 1 function trả về giá trị value * multiplier của hàm ẩn danh phía trên
+    final triple = applyMultiplier(3);
+    print(triple(6)); // sẽ in ra: 18
+
+    // doubleIt vẫn là 1 function trả về giá trị value * multiplier của hàm ẩn danh phía trên
+    final doubleIt = applyMultiplier(2);
+    print(doubleIt(3)); // sẽ in ra: 6
+}
+```
 
 ## Nguồn tham khảo
 - Bài viết được tham khảo từ tài liệu của đồng nghiệp

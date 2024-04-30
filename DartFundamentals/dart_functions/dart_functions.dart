@@ -19,6 +19,30 @@ void main() {
   var dynamicString = compliment("Hello");
   print(dynamicNumber); // sẽ in ra: 10 is a very nice int
   print(dynamicString); // sẽ in ra: Hello is a very nice String
+
+  // Hàm ẩn danh
+  final multiply = (int a, int b) {
+    return a * b;
+  };
+
+  print(multiply(2, 3)); // sẽ in ra: 6
+
+  // Viết ngắn gọn hơn
+  final multiply2 = (int a, int b) => a * b;
+  print(multiply2(2, 5)); // sẽ in ra: 10
+
+  // Hàm trả về một hàm khác
+  Function applyMultiplier(num multiplier) {
+    return (num value) {
+      return value * multiplier;
+    };
+  }
+
+  final triple = applyMultiplier(3);
+  print(triple(6)); // sẽ in ra: 18
+
+  final doubleIt = applyMultiplier(2);
+  print(doubleIt(3)); // sẽ in ra: 6
 }
 
 void printMyName() {
