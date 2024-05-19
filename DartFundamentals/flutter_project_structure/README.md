@@ -1,6 +1,8 @@
-# Một ứng dụng Flutter cơ bản có gì
+# Một ứng dụng Flutter cơ bản có gì?
 
 ## Tạo Project flutter
+
+- Để tạo một project flutter ta dùng lệnh sau
 
 ```bash
 flutter create --org com.yourdomain your_app_name
@@ -10,7 +12,13 @@ flutter create --org com.yourdomain your_app_name
   - `your_app_name` tên ứng dụng của bạn. Lưu ý đặt theo format.
   - `--org com.yourcompany` là `applicationId` (Android) hay `PRODUCT_BUNDLE_IDENTIFIER` (iOS)
 
-## Cấu trúc
+- Và để chạy ứng dụng ta dùng lệnh
+
+```bash
+flutter run
+```
+
+## Cấu trúc dự án
 
 - Sau khi đã tạo được project flutter thì đầu tiên chúng ta cùng tìm hiểu cấu trúc của một dự án flutter
 
@@ -89,6 +97,8 @@ class HomePage extends StatelessWidget {
 - Ở đây chúng ta thấy khi ghi đè build sẽ trả về 1 đối tượng `Scaffold`, là 1 widget cung cấp cho lập trình viên một bộ khung chứa sẵn các thuộc tính quan trong để xây dựng giao diện 1 màn hình như `appBar`, `body`, `FloatingActionButton`,...
 - Trong Scaffold ta thấy có khai báo `appBar` với một đối tượng là `AppBar` có thuộc tính title là một `Text` và body được truyền vào 1 widget là `Center` có child widget là `Text`
 
+![Home Page](../../Imgs/project_3.png)
+
 ## StatefulWidget
 
 - Khi bạn tạo page cần thay đổi nội thì sẽ kế thừa `StatefulWidget` và sẽ có một chút thay đổi.
@@ -156,6 +166,8 @@ class _CounterPageState extends State<CounterPage> {
 
 - Ở đây đây chúng ta khai báo 1 biến `count = 0` và 1 `Scaffold` có chứa 1 `Column` mà bên trong có 1 `Text` và 1 `OutlinedButton`
 - Khi ấn vào nút (`onPressed`) thì chúng ta sẽ gọi hàm `setState()` để set lại giá trị cho biến count = count + 1, có nghĩa là mỗi lần ấn nút thì giá trị count sẽ tăng lên 1.
+
+![Counter Page](../../Imgs/project_2.png)
 
 ## Tổng kết
 - Tạo một project flutter bằng command line
