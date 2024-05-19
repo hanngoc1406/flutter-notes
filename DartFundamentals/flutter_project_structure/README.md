@@ -155,7 +155,7 @@ class _CounterPageState extends State<CounterPage> {
 ```
 
 - Ở đây đây chúng ta khai báo 1 biến `count = 0` và 1 `Scaffold` có chứa 1 `Column` mà bên trong có 1 `Text` và 1 `OutlinedButton`
-- Khi ấn vào nút (`onPressed`) thì chúng ta sẽ gọi hàm setState() để set lại giá trị cho biến count đã khai báo ở trên.
+- Khi ấn vào nút (`onPressed`) thì chúng ta sẽ gọi hàm `setState()` để set lại giá trị cho biến count = count + 1, có nghĩa là mỗi lần ấn nút thì giá trị count sẽ tăng lên 1.
 
 ## Tổng kết
 - Tạo một project flutter bằng command line
